@@ -40,7 +40,7 @@ then you are ready to run.
 
 
 
-If want to use this plugin in your own project
+# If want to use plugin in your own project
 
 Current there is a way will be easy
 
