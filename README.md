@@ -5,7 +5,6 @@ A Flutter plugin for trust wallet core
 download pre_release lib zip from release.
 Run example, If crash, make sure follow below step
 # Android
-create "libs" folder in path ./android then put trustwalletcore into libs folder
 Add 
 ```
 class MainActivity: FlutterActivity() {
@@ -14,7 +13,7 @@ class MainActivity: FlutterActivity() {
     }
 }
  ```
-in android project MainActivity.ky file 
+in your android project MainActivity.ky file 
 
 
 # iOS
