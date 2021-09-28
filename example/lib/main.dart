@@ -35,7 +35,7 @@ class _ExampleState extends State<Example> {
   void initState() {
     FlutterTrustWalletCore.init();
     super.initState();
-    String mnemonic = "rent craft script crucial item someone dream federal notice page shrug pipe young hover duty"; // 有测试币的 tron地址
+    String mnemonic = "horror select baby exile convince sunset outside vehicle write decade powder energy"; // 有测试币的 tron地址
     wallet = HDWallet.createWithMnemonic(mnemonic);
   }
 
