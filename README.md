@@ -15,18 +15,6 @@ class MainActivity: FlutterActivity() {
  ```
 in your android project MainActivity.ky file 
 
-
-# iOS
-create "Frameworks" folder in path ./ios then put  SwiftProtobuf.xcframework and WalletCore.xcframework into Frameworks folder
-
-Add 
-```
-  # trust wallet core
-  s.vendored_frameworks = 'Frameworks/*.xcframework'
-```
-
-in podspec 
-
 your project file structs will look like this
 
 <img width="456" alt="截屏2021-09-16 上午10 26 10" src="https://user-images.githubusercontent.com/54241621/133539483-b8019dfd-3b5f-44d5-88a9-62738f5df09f.png">
