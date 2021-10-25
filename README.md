@@ -1,9 +1,7 @@
 # trust_wallet_core
 
-A Flutter plugin for trust wallet core
+A Flutter plugin for trust wallet core, Can access all api list in [https://github.com/trustwallet/wallet-core/tree/master/include/TrustWalletCore](https://github.com/trustwallet/wallet-core/tree/master/include/TrustWalletCore)
 
-download pre_release lib zip from release.
-Run example, If crash, make sure follow below step
 # Android
 Add 
 ```
@@ -15,48 +13,16 @@ class MainActivity: FlutterActivity() {
  ```
 in your android project MainActivity.ky file 
 
-your project file structs will look like this
+# iOS
 
-<img width="456" alt="截屏2021-09-16 上午10 26 10" src="https://user-images.githubusercontent.com/54241621/133539483-b8019dfd-3b5f-44d5-88a9-62738f5df09f.png">
+Nothing need to do.
 
-
-then you are ready to run.
-
-
-
-
-
-
-# If want to use plugin in your own project
-
-Current there is a way will be easy
-
-Just add follow dep in your pubspec.yaml file, flutter_trust_wallet_core_lib_include.git was check binary lib into repo.
-```
-flutter_trust_wallet_core:
-    git:
-      url: https://github.com/weishirongzhen/flutter_trust_wallet_core_lib_include.git
-      ref: 8e371e1aadcf06f2d1ce44fb3036a36395d1f095
-```
-
-make sure ref is newest, then run  flutter pub get
-
-edit you android MainACtivity.kt file
-```
-class MainActivity: FlutterActivity() {
-    init {
-        System.loadLibrary("TrustWalletCore")
-    }
-}
-
-```
-
-ios nothing need todo.
 
 # dart part
-before use wallet_core, add 
+before use wallet_core, call below function once.
 ```
  FlutterTrustWalletCore.init();
 ```
-before call any api of wallet_core
+
+Then you are ready to run.
 
