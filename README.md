@@ -11,11 +11,13 @@ class MainActivity: FlutterActivity() {
     }
 }
  ```
-in your android project MainActivity.ky file 
+in your android project MainActivity.ky file
+
+minSdk require >=23
 
 # iOS
 
-Nothing need to do.
+min ios platform support >=13.0
 
 
 # dart part
