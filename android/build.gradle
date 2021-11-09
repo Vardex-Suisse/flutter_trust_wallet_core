@@ -22,7 +22,7 @@ rootProject.allprojects {
             url = uri("https://maven.pkg.github.com/weishirongzhen/wallet-core")
             credentials {
                 username = "weishirongzhen"
-                password = "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" // GH token for only allow read package
+                password = "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" // GH token for only allow read package
             }
         }
     }
