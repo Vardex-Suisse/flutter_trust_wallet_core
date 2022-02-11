@@ -18,12 +18,13 @@ rootProject.allprojects {
     repositories {
         google()
         jcenter()
-        maven {
-            url = uri("https://maven.pkg.github.com/weishirongzhen/wallet-core")
-            credentials {
-                username = "weishirongzhen"
-                password = "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" // GH token for only allow read package
-            }
+        maven {  
+            url = uri("https://maven.pkg.github.com/weishirongzhen/wallet-core")             
+            credentials {                 
+                username = project.findProperty("gpr.user") as String ?: System.getenv("GH_USERNAME")                 
+                password = project.findProperty("gpr.token") as String ?: System.getenv("GH_TOKEN")                 
+                // create your token -> https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token             
+             }         
         }
     }
 }
