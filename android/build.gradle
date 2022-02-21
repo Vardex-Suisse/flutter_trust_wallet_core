@@ -21,8 +21,8 @@ rootProject.allprojects {
         maven {  
             url = uri("https://maven.pkg.github.com/trustwallet/wallet-core")             
             credentials {                 
-                username = project.findProperty("gpr.user") as String ?: System.getenv("GH_USERNAME")                 
-                password = project.findProperty("gpr.token") as String ?: System.getenv("GH_TOKEN")                             
+                username = project.findProperty("gpr.user") ?: System.getenv("GH_USERNAME")                 
+                password = project.findProperty("gpr.token") ?: System.getenv("GH_TOKEN")                             
              }         
         }
     }
