@@ -5,7 +5,7 @@ buildscript {
     ext.kotlin_version = '1.3.50'
     repositories {
         google()
-        jcenter()
+        mavenCentral()
     }
 
     dependencies {
@@ -17,13 +17,12 @@ buildscript {
 rootProject.allprojects {
     repositories {
         google()
-        jcenter()
+        mavenCentral()
         maven {  
-            url = uri("https://maven.pkg.github.com/weishirongzhen/wallet-core")             
+            url = uri("https://maven.pkg.github.com/trustwallet/wallet-core")             
             credentials {                 
                 username = project.findProperty("gpr.user") as String ?: System.getenv("GH_USERNAME")                 
-                password = project.findProperty("gpr.token") as String ?: System.getenv("GH_TOKEN")                 
-                // create your token -> https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token             
+                password = project.findProperty("gpr.token") as String ?: System.getenv("GH_TOKEN")                             
              }         
         }
     }
@@ -45,5 +44,5 @@ android {
 
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    implementation "com.weishirongzhen:wallet-core:2.6.20"
+    implementation "com.trustwallet:wallet-core:2.7.1"
 }
