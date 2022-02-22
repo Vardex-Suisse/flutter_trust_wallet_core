@@ -20,7 +20,7 @@ in your android project MainActivity.kt file
 
 Create [github auth token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token) to fetch binary from official TrustWalletCore maven repo
 
-Set gradle project property gpr.user and gpr.token or set system environment variable GH_USERNAME and GH_TOKEN with the credentials you recieved from github
+Set gradle project property `gpr.user` and `gpr.token` or set system environment variable `GH_USERNAME` and `GH_TOKEN` with the credentials you recieved from github
 
 
 # iOS
