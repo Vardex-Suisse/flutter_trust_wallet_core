@@ -1,12 +1,15 @@
-# trust_wallet_core
+# flutter_trust_wallet_core
 
-A Flutter plugin for trust wallet core, Can access all api list in [https://github.com/trustwallet/wallet-core/tree/master/include/TrustWalletCore](https://github.com/trustwallet/wallet-core/tree/master/include/TrustWalletCore)
+A Flutter plugin for trust wallet core. It can access all api list in [https://github.com/trustwallet/wallet-core/tree/master/include/TrustWalletCore](https://github.com/trustwallet/wallet-core/tree/master/include/TrustWalletCore) (from trust_wallet_core version 2.6.20)
+
+This project was originally copied from [weishirongzhen](https://github.com/weishirongzhen/flutter_trust_wallet_core)
 
 # Android
 
 minSdk require >=23
 
 Add 
+
 ```
 class MainActivity: FlutterActivity() {
     init {
@@ -18,7 +21,7 @@ in your android project MainActivity.kt file
 
 ## Create github authoken
 
-Create [github auth token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token) to fetch binary from official TrustWalletCore maven repo
+Create a [github auth token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token) to fetch binary from official TrustWalletCore maven repo
 
 Set gradle project property `gpr.user` and `gpr.token` or set system environment variable `GH_USERNAME` and `GH_TOKEN` with the credentials you recieved from github
 
@@ -30,10 +33,10 @@ min ios platform support >=13.0
 
 # Flutter 
 
-before use wallet_core, call below function once.
+Before using this package, you need to initialise it:
+
 ```
  FlutterTrustWalletCore.init();
 ```
 
-Then you are ready to run.
 
