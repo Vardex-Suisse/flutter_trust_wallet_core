@@ -2,6 +2,7 @@ name: trust_wallet_core
 description: A Flutter  plugin for trust wallet core
 version: 0.0.4
 homepage: https://github.com/weishirongzhen/flutter_trust_wallet_core
+publish: none
 
 environment:
   sdk: ">=2.12.0 <3.0.0"
