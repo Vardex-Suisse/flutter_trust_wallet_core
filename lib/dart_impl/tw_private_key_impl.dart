@@ -6,7 +6,8 @@ class TWPrivateKeyImpl extends TWPrivateKey {
   }
 
   static Pointer<Void> createWithData(Uint8List bytes) {
-    final data = TWData.TWDataCreateWithBytes(bytes.toPointerUint8(), bytes.length);
+    final data =
+        TWData.TWDataCreateWithBytes(bytes.toPointerUint8(), bytes.length);
     return TWPrivateKey.TWPrivateKeyCreateWithData(data);
   }
 
@@ -26,7 +27,13 @@ class TWPrivateKeyImpl extends TWPrivateKey {
     TWPrivateKey.TWPrivateKeyDelete(pk);
   }
 
-  static Pointer<Void> getPublicKeySecp256k1(Pointer<Void> pk, bool compressed) {
-    return TWPrivateKey.TWPrivateKeyGetPublicKeySecp256k1(pk, compressed ? 1 : 0);
+  static Pointer<Void> getPublicKeySecp256k1(
+      Pointer<Void> pk, bool compressed) {
+    return TWPrivateKey.TWPrivateKeyGetPublicKeySecp256k1(
+        pk, compressed ? 1 : 0);
+  }
+
+  static Pointer<Void> getPublicKeyEd25519(Pointer<Void> pk) {
+    return TWPrivateKey.TWPrivateKeyGetPublicKeyEd25519(pk);
   }
 }
