@@ -9,20 +9,26 @@ class TWHDWalletImpl extends TWHDWallet {
     return wallet;
   }
 
-  static Pointer<Void> createWithMnemonic(String mnemonic, {String passphrase = ""}) {
-    if (!TWMnemonicImpl.isValid(mnemonic)) throw Exception(["mnemonic is invalid"]);
+  static Pointer<Void> createWithMnemonic(String mnemonic,
+      {String passphrase = ""}) {
+    if (!TWMnemonicImpl.isValid(mnemonic))
+      throw Exception(["mnemonic is invalid"]);
     final _passphraseTWString = TWStringImpl.toTWString(passphrase);
     final _mnemonicTWString = TWStringImpl.toTWString(mnemonic);
-    final wallet = TWHDWallet.TWHDWalletCreateWithMnemonic(_mnemonicTWString, _passphraseTWString);
+    final wallet = TWHDWallet.TWHDWalletCreateWithMnemonic(
+        _mnemonicTWString, _passphraseTWString);
     TWStringImpl.delete(_passphraseTWString);
     TWStringImpl.delete(_mnemonicTWString);
     return wallet;
   }
 
-  static Pointer<Void> createWithData(Uint8List bytes, {String passphrase = ""}) {
-    final _data = TWData.TWDataCreateWithBytes(bytes.toPointerUint8(), bytes.length);
+  static Pointer<Void> createWithData(Uint8List bytes,
+      {String passphrase = ""}) {
+    final _data =
+        TWData.TWDataCreateWithBytes(bytes.toPointerUint8(), bytes.length);
     final _passphraseTWString = TWStringImpl.toTWString(passphrase);
-    final wallet = TWHDWallet.TWHDWalletCreateWithData(_data, _passphraseTWString);
+    final wallet =
+        TWHDWallet.TWHDWalletCreateWithEntropy(_data, _passphraseTWString);
     TWStringImpl.delete(_passphraseTWString);
     TWData.TWDataDelete(_data);
     return wallet;
@@ -34,8 +40,10 @@ class TWHDWalletImpl extends TWHDWallet {
     return TWStringImpl.toDartString(_address);
   }
 
-  static Pointer<Void> getDerivedKey(Pointer<Void> wallet, int coin, int account, int change, int address) {
-    final _privateKey = TWHDWallet.TWHDWalletGetDerivedKey(wallet, coin, account, change, address);
+  static Pointer<Void> getDerivedKey(
+      Pointer<Void> wallet, int coin, int account, int change, int address) {
+    final _privateKey = TWHDWallet.TWHDWalletGetDerivedKey(
+        wallet, coin, account, change, address);
 
     return _privateKey;
   }
@@ -51,14 +59,17 @@ class TWHDWalletImpl extends TWHDWallet {
   }
 
   static Pointer<Void> getKeyForCoin(Pointer<Void> wallet, int coin) {
-    final Pointer<Void> privateKey = TWHDWallet.TWHDWalletGetKeyForCoin(wallet, coin);
+    final Pointer<Void> privateKey =
+        TWHDWallet.TWHDWalletGetKeyForCoin(wallet, coin);
     return privateKey;
   }
 
-  static Pointer<Void> getKey(Pointer<Void> wallet, int coin, String derivationPath) {
+  static Pointer<Void> getKey(
+      Pointer<Void> wallet, int coin, String derivationPath) {
     final _derivationPath = TWStringImpl.toTWString(derivationPath);
 
-    final Pointer<Void> privateKey = TWHDWallet.TWHDWalletGetKey(wallet, coin, _derivationPath);
+    final Pointer<Void> privateKey =
+        TWHDWallet.TWHDWalletGetKey(wallet, coin, _derivationPath);
     TWStringImpl.delete(_derivationPath);
     return privateKey;
   }
@@ -72,8 +83,10 @@ class TWHDWalletImpl extends TWHDWallet {
     return TWStringImpl.toDartString(TWHDWallet.TWHDWalletMnemonic(wallet));
   }
 
-  static String getExtendedPublicKey(Pointer<Void> wallet, int purpose, int coinType, int twHdVersion) {
-    final publicKey = TWHDWallet.TWHDWalletGetExtendedPublicKey(wallet, purpose, coinType, twHdVersion);
+  static String getExtendedPublicKey(
+      Pointer<Void> wallet, int purpose, int coinType, int twHdVersion) {
+    final publicKey = TWHDWallet.TWHDWalletGetExtendedPublicKey(
+        wallet, purpose, coinType, twHdVersion);
 
     return TWStringImpl.toDartString(publicKey);
   }
