@@ -44,7 +44,7 @@ class PrivateKey {
     return PublicKey._(data);
   }
 
-  PublicKey getPublicKeyEd25519(bool compressed) {
+  PublicKey getPublicKeyEd25519() {
     final data = TWPrivateKeyImpl.getPublicKeyEd25519(_nativehandle);
     return PublicKey._(data);
   }
