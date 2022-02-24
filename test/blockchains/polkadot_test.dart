@@ -2,6 +2,9 @@
 
 import 'package:flutter_test/flutter_test.dart';
 
+import '../init.dart';
+
 void main() {
+  setUp(() => Tests.init());
   test('Test - ', () {});
 }
