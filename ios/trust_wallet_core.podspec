@@ -9,7 +9,7 @@ Pod::Spec.new do |s|
   s.description      = <<-DESC
 A Flutter  plugin for trust wallet core
                        DESC
-  s.homepage         = 'https://github.com/weishirongzhen/flutter_trust_wallet_core'
+  s.homepage         = 'https://github.com/Vardex-Suisse/flutter_trust_wallet_core'
   s.license          = { :file => '../LICENSE' }
   s.author           = { 'memtopia' => 'memtopia@gmail.com' }
   s.source           = { :path => '.' }
