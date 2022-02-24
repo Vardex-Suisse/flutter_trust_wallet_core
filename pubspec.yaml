@@ -15,6 +15,7 @@ dependencies:
   protobuf: ^2.0.0
   fixnum: ^1.0.0
 dev_dependencies:
+  convert: ^3.0.1
   flutter_test:
     sdk: flutter
 
