@@ -6,8 +6,6 @@ import 'dart:typed_data';
 import 'trust_wallet_core_ffi.dart';
 import 'extensions.dart';
 
-
-
 part 'core/mnemonic.dart';
 part 'core/hd_wallet.dart';
 part 'core/private_key.dart';
@@ -31,10 +29,20 @@ part 'core/coin_type_configuration.dart';
 part 'core/ethereum_abi_function.dart';
 part 'core/hrp.dart';
 
-
-
 class FlutterTrustWalletCore {
   static void init() {
-    walletCoreLib = Platform.isAndroid ? DynamicLibrary.open("libTrustWalletCore.so") : DynamicLibrary.process();
+    if (Platform.environment.containsKey('FLUTTER_TEST')) {
+      String path = "";
+      if (Platform.isMacOS) {
+        path = 'test-builds/libTrustWalletCore.dylib';
+      } else {
+        throw ("${Platform.operatingSystem} is currently not supported to run tests");
+      }
+      walletCoreLib = DynamicLibrary.open(path);
+    } else {
+      walletCoreLib = Platform.isAndroid
+          ? DynamicLibrary.open("libTrustWalletCore.so")
+          : DynamicLibrary.process();
+    }
   }
 }
