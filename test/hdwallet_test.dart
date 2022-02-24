@@ -85,7 +85,6 @@ void main() {
     final wanChain = TWCoinType.TWCoinTypeWanchain;
     final wallet = walletTest;
 
-    final eth = TWCoinType.TWCoinTypeEthereum;
     final key = wallet.getKeyForCoin(wanChain);
     final address =
         '0x4DDa26870B4b3fa3FbA32222159359038f588318'; //key.deriveAddress(key); //TODO: first need to implement cointype
