@@ -6,19 +6,20 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:trust_wallet_core/flutter_trust_wallet_core.dart';
 import 'package:trust_wallet_core/trust_wallet_core_ffi.dart';
 
-import 'init.dart';
 import 'utils/hex.dart';
 
 // TODO: change to not use TWCoinType add code to /dart_impl and /core
 void main() {
-  setUp(() => Tests.init());
+  setUp(() {
+    FlutterTrustWalletCore.init();
+  });
 
-  final walletTest = HDWallet.createWithMnemonic(
+  walletTest() => HDWallet.createWithMnemonic(
       'ripple scissors kick mammal hire column oak again sun offer wealth tomorrow wagon turn fatal',
       passphrase: 'TREZOR');
 
   test('Test - Generate wallet from mnemonic w/ passphrase', () {
-    final wallet = walletTest;
+    final wallet = walletTest();
     expect(wallet.mnemonic(),
         'ripple scissors kick mammal hire column oak again sun offer wealth tomorrow wagon turn fatal');
     expect(Hex.encode(wallet.seed()),
@@ -65,7 +66,7 @@ void main() {
   });
 
   test('Test - Derive', () {
-    final wallet = walletTest;
+    final wallet = walletTest();
 
     final eth = TWCoinType.TWCoinTypeEthereum;
     final key0 = wallet.getDerivedKey(eth, 0, 0, 0);
@@ -83,7 +84,7 @@ void main() {
 
   test('Test - Wanchain', () {
     final wanChain = TWCoinType.TWCoinTypeWanchain;
-    final wallet = walletTest;
+    final wallet = walletTest();
 
     final key = wallet.getKeyForCoin(wanChain);
     final address =
