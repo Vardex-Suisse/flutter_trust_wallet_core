@@ -1,4 +1,5 @@
 library trust_wallet_core_ffi;
+
 import 'dart:ffi';
 import 'dart:typed_data';
 
@@ -84,7 +85,6 @@ part 'ffi_impl/tw_stored_key.dart';
 
 part 'ffi_impl/tw_string.dart';
 
-
 part 'dart_impl/tw_string_impl.dart';
 part 'dart_impl/tw_mnemonic_impl.dart';
 part 'dart_impl/tw_hd_wallet_impl.dart';
@@ -109,12 +109,7 @@ part 'dart_impl/tw_ethereum_abi_value_impl.dart';
 part 'dart_impl/tw_coin_type_configuration_impl.dart';
 part 'dart_impl/tw_ethereum_abi_function_impl.dart';
 
-
-
-
-
 late DynamicLibrary walletCoreLib;
 
-final Pointer<T> Function<T extends NativeType>(String symbolName) _lookup = walletCoreLib.lookup;
-
-
+final Pointer<T> Function<T extends NativeType>(String symbolName) _lookup =
+    walletCoreLib.lookup;
