@@ -2,9 +2,9 @@
 
 import 'package:flutter_test/flutter_test.dart';
 
-import '../init.dart';
+import 'package:trust_wallet_core/flutter_trust_wallet_core.dart';
 
 void main() {
-  setUp(() => Tests.init());
+  setUp(() => FlutterTrustWalletCore.init());
   test('Test - ', () {});
 }
