@@ -32,7 +32,7 @@ part 'core/hrp.dart';
 class FlutterTrustWalletCore {
   static void init() {
     if (Platform.environment.containsKey('FLUTTER_TEST')) {
-      String path = "";
+      String path = '';
       if (Platform.isMacOS) {
         path = 'test-builds/libTrustWalletCore.dylib';
       } else {
