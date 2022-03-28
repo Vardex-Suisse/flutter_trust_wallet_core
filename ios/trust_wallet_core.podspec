@@ -22,5 +22,5 @@ A Flutter  plugin for trust wallet core
   s.swift_version = '5.0'
 
   # trust wallet core
-  s.dependency 'TrustWalletCore'
+  s.dependency 'TrustWalletCore', '~> 2.7.2'
 end
