@@ -18,12 +18,15 @@ rootProject.allprojects {
     repositories {
         google()
         mavenCentral()
-        maven {  
-            url = uri("https://maven.pkg.github.com/trustwallet/wallet-core")             
-            credentials {                 
-                username = project.findProperty("gpr.user") ?: System.getenv("GH_USERNAME")                 
-                password = project.findProperty("gpr.token") ?: System.getenv("GH_TOKEN")                             
-             }         
+        // maven {  
+        //     url = uri("https://maven.pkg.github.com/trustwallet/wallet-core")             
+        //     credentials {                 
+        //         username = project.findProperty("gpr.user") ?: System.getenv("GH_USERNAME")                 
+        //         password = project.findProperty("gpr.token") ?: System.getenv("GH_TOKEN")                             
+        //      }         
+        // }
+        flatDir {
+            dirs project(':trust_wallet_core').file('libs')
         }
     }
 }
@@ -44,5 +47,6 @@ android {
 
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    implementation "com.trustwallet:wallet-core:2.7.2"
+    // implementation "com.trustwallet:wallet-core:2.7.2"
+    implementation(name: 'trustwalletcore', ext: 'aar')
 }

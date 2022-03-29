@@ -19,12 +19,19 @@ class MainActivity: FlutterActivity() {
  ```
 in your android project MainActivity.kt file
 
-## Create github authoken
+## Create github authoken (currently not required as pre-compiled .aar is used)
 
 Create a [github auth token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token) to fetch binary from official TrustWalletCore maven repo
 
 Set gradle project property `gpr.user` and `gpr.token` or set system environment variable `GH_USERNAME` and `GH_TOKEN` with the credentials you recieved from github
 
+## Compiling TrustWalletCore .aar (use this until lookup error solved)
+
+1. Pull official trustwallet core repo
+2. Change `set(CMAKE_CXX_VISIBILITY_PRESET hidden)` to  `set(CMAKE_CXX_VISIBILITY_PRESET default)` in CmakeLists.txt (Line 14)
+3. Build project `./bootstrap.sh`
+4. Compile for android run `./tools/android-build`
+5. Copy trustwalletcore.aar in /build to android/libs in this project 
 
 # iOS
 

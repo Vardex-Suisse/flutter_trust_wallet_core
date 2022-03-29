@@ -32,16 +32,16 @@ part 'core/hrp.dart';
 class FlutterTrustWalletCore {
   static void init() {
     if (Platform.environment.containsKey('FLUTTER_TEST')) {
-      String path = "";
+      String path = '';
       if (Platform.isMacOS) {
         path = 'test-builds/libTrustWalletCore.dylib';
       } else {
-        throw ("${Platform.operatingSystem} is currently not supported to run tests");
+        throw ('${Platform.operatingSystem} is currently not supported for testing');
       }
       walletCoreLib = DynamicLibrary.open(path);
     } else {
       walletCoreLib = Platform.isAndroid
-          ? DynamicLibrary.open("libTrustWalletCore.so")
+          ? DynamicLibrary.open('libTrustWalletCore.so')
           : DynamicLibrary.process();
     }
   }
